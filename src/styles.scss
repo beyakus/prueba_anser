@@ -1,0 +1,186 @@
+@import "./assets/sass/variables.scss";
+@import "./assets/sass/fonts.scss";
+@import "./assets/sass/boxes.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "sf-ui-display";
+  background-color: $blue-ligth;
+}
+
+.content__text {
+  width: 100%;
+}
+.content__header {
+  font-family: "sf-ui-display-medium";
+  color: $blue;
+  font-size: 28px;
+  display: flex;
+  padding: 30px;
+}
+.img__header {
+  width: 36px;
+  height: 29px;
+}
+.menu__content {
+  background-color: $white;
+}
+.menu__content ul {
+  list-style: none;
+  margin-left: 40px;
+}
+.menu__content ul li {
+  display: inline-block;
+}
+
+.menu__content ul li a {
+  text-decoration: none;
+  color: $green;
+  font-size: 20px;
+  display: block;
+  padding: 10px 140px;
+  &:hover {
+    background-color: rgba(75, 164, 116, 0.05);
+    border-bottom: 3px solid $green;
+  }
+}
+
+.card__main {
+  width: 100%;
+  padding: 40px;
+  background-color: $white;
+  border-radius: 25px;
+}
+
+label {
+  display: block;
+  font-size: 12px;
+  color: $gray;
+}
+
+input {
+  &:focus {
+    outline: inherit;
+  }
+}
+
+input[type="date"] {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0px 1px 4px #00000029;
+  padding: 8px;
+  color: $gray-2;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  color: rgba(0, 0, 0, 0);
+  opacity: 1;
+  display: block;
+  background: url("./assets/img/calendar.svg") no-repeat;
+  width: 20px;
+  height: 10px;
+  border-width: thin;
+  &:focus {
+    outline: none;
+  }
+}
+.display__datepicker {
+  display: inherit;
+}
+input[type="range"] {
+  -webkit-appearance: none;
+  background-color: $gray;
+  height: 3px;
+  width: 100%;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: $white;
+  width: 15px;
+  height: 15px;
+  border: 1px solid;
+  border-radius: 50%;
+  &:focus {
+    outline: none;
+  }
+}
+.search {
+  display: flex;
+  width: 100%;
+
+  align-items: center;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table thead {
+  height: 29px;
+  box-shadow: 0px 3px 6px #00000029;
+}
+table thead tr td {
+  background-color: $blue-ligth;
+  color: $gray-3;
+  height: 30px;
+  font-size: 14px;
+}
+table tbody {
+  font-size: 13px;
+  color: $gray-2;
+  border-top: 10px solid $white;
+}
+
+table tbody tr {
+  border-top: 5px solid $white;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  border: 1px solid;
+}
+
+.red {
+  background-color: $red;
+  border-color: $red;
+}
+.yellow {
+  background-color: $yellow;
+  border-color: $yellow;
+}
+.green {
+  background-color: $green-2;
+  border-color: $green-2;
+}
+.dot-text {
+  @extend .dot;
+  height: 16px;
+  width: 16px;
+  font-size: 8px;
+  border: none;
+  color: $black;
+  text-align: center;
+  padding-top: 2px;
+}
+.color__change {
+  background-color: $blue-ligth;
+}
+.color__depends {
+  background-color: $gray;
+}
+
+i {
+  cursor: pointer;
+}
+
+.childre__table {
+  padding-left: 20px;
+}

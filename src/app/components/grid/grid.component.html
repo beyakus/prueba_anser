@@ -1,0 +1,86 @@
+<app-card>
+  <div class="row">
+    <div class="col-12 col-md-10 display__datepicker">
+      <app-datepicker [label]="'Start date'"></app-datepicker>
+      <app-datepicker [label]="'End date'" class="mleft-3"></app-datepicker>
+    </div>
+    <div class="col-12 col-md-2">
+      <div class="content__text search">
+        <img src="../../../assets/img/search-solid.svg" />
+        <label for="zoom" class="mleft-2">Zoom</label>
+        <input type="range" class="mleft-2" />
+      </div>
+    </div>
+  </div>
+  <article class="row mtop-3">
+    <div class="col-12">
+      <table>
+        <thead>
+          <tr>
+            <td *ngFor="let header of headers">{{ header }}</td>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let item of data">
+            <tr>
+              <td>{{ item.value.id }}</td>
+              <td><app-dot [status]="item.value.status"></app-dot></td>
+              <td>
+                <i
+                  *ngIf="item.children.length > 0"
+                  class="fas"
+                  [ngClass]="item.view ? 'fa-angle-down' : 'fa-angle-right'"
+                  (click)="item.view = !item.view"
+                ></i>
+                {{ item.value.taskname }}
+              </td>
+              <td>
+                <app-dot-text
+                  *ngFor="let text of item.value.change"
+                  [text]="text"
+                  [nameClass]="'color__change'"
+                ></app-dot-text>
+              </td>
+              <td>
+                <app-dot-text
+                  *ngFor="let depend of item.value.depends"
+                  [text]="depend"
+                  [nameClass]="'color__depends'"
+                ></app-dot-text>
+              </td>
+              <td>{{ item.value.duration }}</td>
+              <td>{{ item.value.startDate }}</td>
+              <td>{{ item.value.endDate }}</td>
+            </tr>
+            <ng-container *ngIf="item.view">
+              <tr *ngFor="let sub of item.children">
+                <td>{{ sub.id }}</td>
+                <td><app-dot [status]="sub.status"></app-dot></td>
+                <td class="childre__table">
+                  {{ sub.taskname }}
+                </td>
+                <td>
+                  <app-dot-text
+                    *ngFor="let text of sub.change"
+                    [text]="text"
+                    [nameClass]="'color__change'"
+                  ></app-dot-text>
+                </td>
+                <td>
+                  <app-dot-text
+                    *ngFor="let depend of sub.depends"
+                    [text]="depend"
+                    [nameClass]="'color__depends'"
+                  ></app-dot-text>
+                </td>
+                <td>{{ sub.duration }}</td>
+                <td>{{ sub.startDate }}</td>
+                <td>{{ sub.endDate }}</td>
+              </tr>
+            </ng-container>
+          </ng-container>
+        </tbody>
+      </table>
+    </div>
+  </article>
+</app-card>

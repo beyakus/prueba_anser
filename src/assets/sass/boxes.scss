@@ -1,0 +1,50 @@
+@import "./mixin.scss";
+
+.text__center {
+  text-align: center;
+}
+.mtop-1 {
+  @include margin-top(5px);
+}
+.mtop-2 {
+  @include margin-top(10px);
+}
+.mtop-3 {
+  @include margin-top(25px);
+}
+.mtop-4 {
+  @include margin-top(35px);
+}
+.mtop-section {
+  @include margin-top(90px);
+}
+.mleft-1 {
+  @include margin-left(5px);
+}
+.mleft-2 {
+  @include margin-left(10px);
+}
+.mleft-3 {
+  @include margin-left(25px);
+}
+.mright-1 {
+  @include margin-right(5px);
+}
+.mright-2 {
+  @include margin-right(10px);
+}
+.mright-3 {
+  @include margin-right(25px);
+}
+.ptop-1 {
+  @include padding-top(5px);
+}
+.ptop-2 {
+  @include padding-top(10px);
+}
+.ptop-3 {
+  @include padding-top(25px);
+}
+.ptop-4 {
+  @include padding-top(35px);
+}

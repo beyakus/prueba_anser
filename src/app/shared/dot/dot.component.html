@@ -1,0 +1,12 @@
+<div
+  class="dot"
+  [ngClass]="
+    status === 'active'
+      ? 'green'
+      : status === 'pending'
+      ? 'yellow'
+      : status === 'block'
+      ? 'red'
+      : ''
+  "
+></div>
